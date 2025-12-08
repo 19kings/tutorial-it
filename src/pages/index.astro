@@ -43,7 +43,7 @@ const latestPosts = posts.slice(0, 3);
                     {
                         latestPosts.map((post) => (
                             <li>
-                                <a href={`/blog/${post.slug}/`}>
+                                <a href={`/blog/${post.id}/`}>
                                     <div class="image-container">
                                         <img width={720} height={360} src={post.data.heroImage} alt="" />
                                     </div>
