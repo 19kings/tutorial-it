@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
-import { db } from '../lib/firebase'; // Mengambil database yang kita setting
-// Kita tidak melakukan query berat dulu, hanya cek apakah object db ada
+import { db } from '../lib/firebase';
+
 const status = db ? "Terhubung ✅" : "Gagal ❌";
 ---
 
@@ -12,11 +12,29 @@ const status = db ? "Terhubung ✅" : "Gagal ❌";
 >
 	<p>
 		Halo, saya adalah seorang Senior Engineer dengan pengalaman 30 tahun.
+        Saya membangun website ini sebagai demonstrasi arsitektur modern yang efisien.
 	</p>
 
-    <div style="background: #f4f4f4; padding: 15px; border-radius: 8px; border: 1px solid #ddd;">
+    <div class="status-box">
         <h3>🔌 System Status</h3>
         <p>Database Firebase: <strong>{status}</strong></p>
-        <p>App Version: v1.0.0 (Stable)</p>
+        <p>App Version: <code>v1.0.0 (Stable)</code></p>
     </div>
 </Layout>
+
+<style>
+    /* CSS Lokal khusus halaman ini */
+    .status-box {
+        background-color: var(--gray-light); /* Otomatis jadi gelap di Dark Mode */
+        padding: 1.5rem;
+        border-radius: 8px;
+        border: 1px solid var(--gray);
+        margin-top: 2rem;
+    }
+    
+    /* Supaya judul kecil di dalam box tidak terlalu tebal */
+    .status-box h3 {
+        margin-top: 0;
+        font-size: 1.2rem;
+    }
+</style>

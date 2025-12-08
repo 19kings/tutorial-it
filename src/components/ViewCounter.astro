@@ -1,0 +1,57 @@
+---
+// src/components/ViewCounter.astro
+---
+<div class="view-counter">
+  <span class="icon">👀</span>
+  <span id="views-count">...</span> views
+</div>
+
+<script>
+  import { db } from "../lib/firebase";
+  import { doc, getDoc, setDoc, updateDoc, increment } from "firebase/firestore";
+
+  async function updateViews() {
+    // Ambil ID halaman dari URL (misal: "blog_cara-fix-wifi")
+    const path = window.location.pathname;
+    const pageId = path === "/" ? "home" : path.replace(/\//g, "_").replace(/^_/, "").replace(/_$/, "");
+    
+    if (!pageId) return; // Safety check
+
+    const docRef = doc(db, "pages", pageId);
+
+    try {
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        // Kalau data ada, tambah +1
+        await updateDoc(docRef, { views: increment(1) });
+        document.getElementById("views-count").innerText = (docSnap.data().views + 1).toString();
+      } else {
+        // Kalau belum ada, buat baru angka 1
+        await setDoc(docRef, { views: 1 });
+        document.getElementById("views-count").innerText = "1";
+      }
+    } catch (e) {
+      console.error("Error counter:", e);
+    }
+  }
+
+  // Jalankan saat browser selesai loading
+  updateViews();
+</script>
+
+<style>
+  .view-counter {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: monospace;
+    background: var(--gray-light); /* Ikut tema */
+    color: var(--accent);
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--gray);
+  }
+</style>
