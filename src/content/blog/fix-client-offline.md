@@ -2,7 +2,7 @@
 title: 'Mengatasi Error "Client is Offline" pada Firebase & Netlify'
 description: 'Panduan lengkap memperbaiki masalah koneksi Firestore saat deploy ke Netlify. Solusi untuk error permission dan environment variables.'
 pubDate: 'Dec 09 2024'
-
+heroImage: '/blog/firebase-client-offline-error'
 ---
 
 Saat menghubungkan Astro dengan Firebase, seringkali semuanya berjalan lancar di `localhost`, tapi hancur saat di-deploy ke Netlify. Salah satu error paling menyebalkan adalah:
