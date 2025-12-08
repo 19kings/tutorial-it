@@ -89,25 +89,62 @@ const posts = (await getCollection('blog')).sort(
 	<body>
 		<Header />
 		<main>
-			<section>
-				<ul>
-					{
-						posts.map((post) => (
-							<li>
-								<a href={`/blog/${post.id}/`}>
-									{post.data.heroImage && (
-										<Image width={720} height={360} src={post.data.heroImage} alt="" />
-									)}
-									<h4 class="title">{post.data.title}</h4>
-									<p class="date">
-										<FormattedDate date={post.data.pubDate} />
-									</p>
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</section>
+			<main>
+    <div class="hero-section">
+        <h1>👨‍💻 Tutorial IT Expert</h1>
+        <p class="intro">
+            Solusi masalah komputer yang <strong>99% Akurat</strong>, langsung dari pengalaman teknisi senior.
+            Tanpa basa-basi, langsung ke inti masalah.
+        </p>
+        
+        <div class="action-buttons">
+            <a href="/blog" class="btn-primary">Baca Tutorial ➞</a>
+            <a href="/about" class="btn-secondary">Tentang Penulis</a>
+        </div>
+    </div>
+
+    <hr />
+
+    <h3>Mengapa Membaca di Sini?</h3>
+    <ul>
+        <li>✅ <strong>Tested:</strong> Semua solusi sudah dicoba sebelum ditulis.</li>
+        <li>⚡ <strong>Fast:</strong> Website tanpa iklan berat & loading instan.</li>
+        <li>🔒 <strong>Secure:</strong> Keamanan data adalah prioritas kami.</li>
+    </ul>
+</main>
+
+<style>
+    /* Sedikit sentuhan CSS agar rapi */
+    .hero-section {
+        text-align: center;
+        padding: 2rem 0;
+    }
+    .intro {
+        font-size: 1.2rem;
+        color: #444;
+        max-width: 600px;
+        margin: 0 auto 2rem auto;
+    }
+    .action-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+    }
+    .btn-primary {
+        background-color: #000;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    .btn-secondary {
+        border: 2px solid #000;
+        color: #000;
+        padding: 8px 18px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+</style>
 		</main>
 		<Footer />
 	</body>
