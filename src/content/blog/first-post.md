@@ -2,7 +2,6 @@
 title: 'Cara Memperbaiki WiFi yang Tanda Seru (!)'
 description: 'Panduan langkah demi langkah mengatasi No Internet Access.'
 pubDate: 'Jul 08 2024'
-heroImage: '/blog-placeholder-1.jpg'
 ---
 
 ## Masalah
