@@ -1,40 +1,54 @@
 ---
 import Layout from '../layouts/BlogPost.astro';
-import { db } from '../lib/firebase';
-
-const status = db ? "Terhubung ✅" : "Gagal ❌";
 ---
 
 <Layout
 	title="Tentang Saya"
-	description="Senior Engineer Profile"
+	description="Profil IT Expert Bali"
 	pubDate={new Date('August 08 2024')}
 >
-	<p>
-		Halo, saya adalah seorang Senior Engineer dengan pengalaman 30 tahun.
-        Saya membangun website ini sebagai demonstrasi arsitektur modern yang efisien.
+	<p class="lead">
+		Halo! 👋 Saya adalah seorang <strong>IT Consultant & Network Engineer</strong> yang berbasis di Tabanan, Bali.
 	</p>
 
-    <div class="status-box">
-        <h3>🔌 System Status</h3>
-        <p>Database Firebase: <strong>{status}</strong></p>
-        <p>App Version: <code>v1.0.0 (Stable)</code></p>
-    </div>
-</Layout>
+	<p>
+		Meskipun tampilan website ini sederhana, pengalaman saya di lapangan tidak main-main. 
+		Saya membantu kantor, sekolah, dan bisnis UMKM untuk membereskan masalah teknis mereka, mulai dari internet yang sering putus-nyambung sampai pembuatan website profesional.
+	</p>
 
-<style>
-    /* CSS Lokal khusus halaman ini */
-    .status-box {
-        background-color: var(--gray-light); /* Otomatis jadi gelap di Dark Mode */
-        padding: 1.5rem;
-        border-radius: 8px;
-        border: 1px solid var(--gray);
-        margin-top: 2rem;
-    }
-    
-    /* Supaya judul kecil di dalam box tidak terlalu tebal */
-    .status-box h3 {
-        margin-top: 0;
-        font-size: 1.2rem;
-    }
-</style>
+	<hr />
+
+	<h3>🚀 Apa yang Saya Kerjakan?</h3>
+	<p>
+		Saya tidak menjual janji manis, tapi solusi teknis. Berikut adalah area keahlian saya:
+	</p>
+	<ul>
+		<li><strong>Jaringan & Mikrotik:</strong> Setting manajemen bandwidth biar internet adil, bikin sistem Voucheran, dan keamanan firewall.</li>
+		<li><strong>Web Development:</strong> Membuat website yang ringan, cepat, dan tampil ganteng di HP (seperti website ini).</li>
+		<li><strong>IT Support:</strong> Servis laptop, instalasi Windows, hingga perbaikan printer dan hardware.</li>
+	</ul>
+
+	<h3>💡 Kenapa Menggunakan Jasa Saya?</h3>
+	<p>
+		Di luar sana banyak teknisi, tapi saya menawarkan pendekatan yang berbeda:
+	</p>
+	<blockquote>
+		"Teknologi itu harusnya memudahkan pekerjaan Bli, bukan malah menambah masalah baru."
+	</blockquote>
+	<p>
+		Saya bekerja dengan rapi, dokumentasi jelas, dan selalu siap dihubungi jika ada kendala di kemudian hari.
+	</p>
+
+	<hr />
+
+	<h3>📞 Mari Berdiskusi</h3>
+	<p>
+		Punya masalah IT yang bikin pusing? Atau mau tanya harga dulu? Santai saja, konsultasi awal gratis kok.
+	</p>
+	
+	<p style="text-align: center; margin-top: 2em;">
+		<a href="https://wa.me/6281234567890" target="_blank" style="background: #4f46e5; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;">
+			Chat via WhatsApp ➝
+		</a>
+	</p>
+</Layout>
