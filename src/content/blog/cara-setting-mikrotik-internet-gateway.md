@@ -2,8 +2,18 @@
 title: '[Mikrotik #1] Cara Setting Mikrotik dari Nol sampai Konek Internet'
 description: 'Tutorial dasar Mikrotik Part 1: Konfigurasi Basic Internet Gateway. Langkah demi langkah untuk pemula agar router bisa online.'
 pubDate: 'Dec 23 2025'
+heroImage: './mikrotik1.jpg'
 tags: ['Mikrotik', 'Tutorial', 'Basic']
 ---
+<figure style="text-align: center; margin: 2rem 0;">
+    <img 
+        src="/mikrotik1.jpg" 
+        alt="Setting Identity Mikrotik" 
+        style="background: white; padding: 10px; border-radius: 8px; display: block; margin: 0 auto; width: 100%; max-width: 450px; box-shadow: 0 4px 10px rgba(0,0,0,0.5);"
+    >
+    <figcaption style="color: #94a3b8; font-size: 0.9rem; margin-top: 8px; font-style: italic;">
+    </figcaption>
+</figure>
 
 Selamat datang di seri **"Mikrotik Zero to Hero"**.
 Di seri pertama ini, kita tidak akan membahas hal rumit dulu. Target kita sederhana: **Bagaimana caranya router Mikrotik ini bisa menerima internet dari modem ISP, lalu menyebarkannya ke laptop/HP kita.**
